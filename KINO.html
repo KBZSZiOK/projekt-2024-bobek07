@@ -8,24 +8,45 @@
 </head>
 <body>
     <div id="baner">
-    <header>
-        <img src="../kino/kino.jpeg">
-    </header>
-    <nav>
-    <ul>
-    <li><a href="KINO.html" class="link">Strona główna</a></li>
-    <li><a href="kino.php" class="link" target="frame">Tabela</a></li>
-    <li><a href="form.php" class="link" target="frame">Formularz</a></li>
-    </ul>
-    </nav>   
-</div>
+        <header>
+            <h2 id="text2">Witam na stronie kina SIGMA</h2>
+            <img src="../kino/pngwing.com.png">
+        </header>
+        <nav>
+            <ul>
+                <li><a href="stronaglowna.html" class="link" target="ramka">Strona główna&nbsp;</a></li>
+                <li><a href="kino.php" class="link" target="ramka">Tabela&nbsp;</a></li>
+                <li><a href="form.php" class="link" target="ramka">Formularz&nbsp;</a></li>
+            </ul>
+        </nav>   
+    </div>
     <div id="strona">
-        <iframe name="ramka" id="frame"></iframe>
-    
-</div>
+        <div class="text" id="movingText">By dowiedzieć się więcej kliknij jedną z opcji powyżej :)</div>
+        <iframe name="ramka" id="frame" src="stronaglowna.html"></iframe>
+    </div>
     <footer>
-        <h3>Wkonał: Robert R</h3>
+        <h3>Wykonał: Robert R</h3>
+        <script>
+            window.addEventListener('load', function() {
+                document.getElementById('footerText').classList.add('animate-footer');
+            });
+        </script>
+        <style>
+            .animate-footer {
+                animation: fadeInUp 3s ease-in-out forwards;
+            }
+            @keyframes fadeInUp {
+                from {
+                    transform: translateY(50px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+        </style>
     </footer>
-    
+    <script src="kino.js"></script>
 </body>
 </html>

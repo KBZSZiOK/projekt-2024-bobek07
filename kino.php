@@ -5,27 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kino.php</title>
 </head>
-<body>
+<body style="color:antiquewhite;">
+    <br><br>
     <?php
-$connect = mysqli_connect(hostname:"localhost",username: "root",password: "",database: "kino4tig1");
-if(mysqli_connect_errno()){
-    echo"<p>MYSQL CONNECTION FAILED</p>";
-}
-else{
-    "<p>CONNECTION SUCCES</p>";
-}
 
-$query = "SELECT * FORM FILMY:";
-if($result = mysqli_query(mysql : $connect,query: $query)){
-    echo"<table style = 'border:solid 1px black'>";
-echo"<tr><th>ID</th><th>Tytuł</th><th>Reżyser/th><th>Czas trwania</th></tr>";
+    $connect = mysqli_connect("localhost", "root", "", "kino4tig1");
+    
+    if (mysqli_connect_errno()) {
+        echo "<p>MYSQL CONNECTION FAILED</p>";
+    } else {
+        echo "<p>CONNECTION SUCCESS</p>";
+    }
 
-foreach(mysqli_fetch_all(result: $result)as $row){
-    echo"<tr><td>".$row[0]."<tr><td>".$row[1]."<tr><td>".$row[2]."<tr><td>".$row[3]."</td>";
-}
-echo"</table>";
-}
-mysqli_close(mysql: $connect);
+    $query = "SELECT * FROM FILMY";
+    
+    if ($result = mysqli_query($connect, $query)) {
+        echo "<table style='border: solid 1px black'>";
+        echo "<tr><th>ID</th><th>Tytuł</th><th>Reżyser</th><th>Czas trwania</th></tr>";
+
+        foreach (mysqli_fetch_all($result) as $row) {
+            echo "<tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td></tr>";
+        }
+        echo "</table>";
+    }
+
+    mysqli_close($connect);
     ?>
 </body>
 </html>

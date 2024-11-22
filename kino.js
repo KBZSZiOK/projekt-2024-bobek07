@@ -1,22 +1,18 @@
 const text = document.getElementById('movingText');
-const screenWidth = window.innerWidth;
-const textWidth = text.offsetWidth;
+const screenWidth = window.innerWidth; 
+const textWidth = text.offsetWidth;    
 
-
-let position = -textWidth;
-
+let position = -textWidth; 
 
 function animateText() {
-    position += 2; // 
+    position += 2; 
     text.style.left = position + 'px';
 
-    
     if (position > screenWidth) {
         position = -textWidth; 
     }
 
-    requestAnimationFrame(animateText);
+    requestAnimationFrame(animateText); 
 }
-
 
 window.addEventListener('load', animateText);

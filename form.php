@@ -6,10 +6,11 @@
     <title>Dodawanie filmu</title>
     <link rel="stylesheet" href="kino1.css">
 </head>
-<body>
+<body style="text-align: center;">
+    <br>
     <h3 style="color: antiquewhite;">Dodawanie danych do tabeli</h3>
-     <form style="color:antiquewhite" method="POST">
-        <label for="title">Tytuł:</label><br>
+     <form style="color:antiquewhite;" method="POST">
+        <label for="title" >Tytuł:</label><br>
         <input type="text" id="title" name="tytuł" required><br><br>
 
         <label for="director">Reżyser:</label><br>
